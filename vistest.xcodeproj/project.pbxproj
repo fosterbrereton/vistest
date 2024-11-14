@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEE0533D2CE6A06B00D3EF3E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0533C2CE6A06B00D3EF3E /* main.cpp */; };
 		CEE053512CE6A10700D3EF3E /* libvis.hpp in Headers */ = {isa = PBXBuildFile; fileRef = CEE0534B2CE6A10700D3EF3E /* libvis.hpp */; };
 		CEE053522CE6A10700D3EF3E /* libvis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0534E2CE6A10700D3EF3E /* libvis.cpp */; };
 		CEE053542CE6A18F00D3EF3E /* liblibvis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */; };
 		CEE053572CE6A56B00D3EF3E /* dylib_getters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE053552CE6A56B00D3EF3E /* dylib_getters.cpp */; };
 		CEE0535B2CE6AC7800D3EF3E /* libvis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0534E2CE6A10700D3EF3E /* libvis.cpp */; };
+		CEE0535E2CE6B2D900D3EF3E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0535C2CE6B2D900D3EF3E /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,12 +28,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CEE053392CE6A06B00D3EF3E /* visibility_test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = visibility_test; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEE0533C2CE6A06B00D3EF3E /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CEE053392CE6A06B00D3EF3E /* vistest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vistest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liblibvis.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0534B2CE6A10700D3EF3E /* libvis.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = libvis.hpp; sourceTree = "<group>"; };
 		CEE0534E2CE6A10700D3EF3E /* libvis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libvis.cpp; sourceTree = "<group>"; };
 		CEE053552CE6A56B00D3EF3E /* dylib_getters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dylib_getters.cpp; path = libvis/source/dylib_getters.cpp; sourceTree = SOURCE_ROOT; };
+		CEE0535C2CE6B2D900D3EF3E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +58,8 @@
 		CEE053302CE6A06B00D3EF3E = {
 			isa = PBXGroup;
 			children = (
+				CEE0535D2CE6B2D900D3EF3E /* src */,
 				CEE053502CE6A10700D3EF3E /* libvis */,
-				CEE0533B2CE6A06B00D3EF3E /* visibility_test */,
 				CEE0533A2CE6A06B00D3EF3E /* Products */,
 				CEE053532CE6A18F00D3EF3E /* Frameworks */,
 			);
@@ -68,18 +68,10 @@
 		CEE0533A2CE6A06B00D3EF3E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEE053392CE6A06B00D3EF3E /* visibility_test */,
+				CEE053392CE6A06B00D3EF3E /* vistest */,
 				CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		CEE0533B2CE6A06B00D3EF3E /* visibility_test */ = {
-			isa = PBXGroup;
-			children = (
-				CEE0533C2CE6A06B00D3EF3E /* main.cpp */,
-			);
-			path = visibility_test;
 			sourceTree = "<group>";
 		};
 		CEE0534C2CE6A10700D3EF3E /* libvis */ = {
@@ -123,6 +115,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CEE0535D2CE6B2D900D3EF3E /* src */ = {
+			isa = PBXGroup;
+			children = (
+				CEE0535C2CE6B2D900D3EF3E /* main.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -137,9 +137,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		CEE053382CE6A06B00D3EF3E /* visibility_test */ = {
+		CEE053382CE6A06B00D3EF3E /* vistest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE053402CE6A06B00D3EF3E /* Build configuration list for PBXNativeTarget "visibility_test" */;
+			buildConfigurationList = CEE053402CE6A06B00D3EF3E /* Build configuration list for PBXNativeTarget "vistest" */;
 			buildPhases = (
 				CEE053352CE6A06B00D3EF3E /* Sources */,
 				CEE053362CE6A06B00D3EF3E /* Frameworks */,
@@ -149,9 +149,9 @@
 			);
 			dependencies = (
 			);
-			name = visibility_test;
-			productName = visibility_test;
-			productReference = CEE053392CE6A06B00D3EF3E /* visibility_test */;
+			name = vistest;
+			productName = vistest;
+			productReference = CEE053392CE6A06B00D3EF3E /* vistest */;
 			productType = "com.apple.product-type.tool";
 		};
 		CEE053462CE6A0B700D3EF3E /* libvis */ = {
@@ -188,7 +188,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEE053342CE6A06B00D3EF3E /* Build configuration list for PBXProject "visibility_test" */;
+			buildConfigurationList = CEE053342CE6A06B00D3EF3E /* Build configuration list for PBXProject "vistest" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -201,7 +201,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEE053382CE6A06B00D3EF3E /* visibility_test */,
+				CEE053382CE6A06B00D3EF3E /* vistest */,
 				CEE053462CE6A0B700D3EF3E /* libvis */,
 			);
 		};
@@ -212,8 +212,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE0535E2CE6B2D900D3EF3E /* main.cpp in Sources */,
 				CEE0535B2CE6AC7800D3EF3E /* libvis.cpp in Sources */,
-				CEE0533D2CE6A06B00D3EF3E /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +395,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEE053342CE6A06B00D3EF3E /* Build configuration list for PBXProject "visibility_test" */ = {
+		CEE053342CE6A06B00D3EF3E /* Build configuration list for PBXProject "vistest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE0533E2CE6A06B00D3EF3E /* Debug */,
@@ -404,7 +404,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE053402CE6A06B00D3EF3E /* Build configuration list for PBXNativeTarget "visibility_test" */ = {
+		CEE053402CE6A06B00D3EF3E /* Build configuration list for PBXNativeTarget "vistest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE053412CE6A06B00D3EF3E /* Debug */,
