@@ -6,11 +6,13 @@ This project is currently macOS only.
 
 # How to Use
 
-The project specifies a dynamic library (`libvis`) and a host application, `vistest`. Build and run the project and you'll see output in accordance with the tests.
+The project specifies a dynamic library (`libvis`) and a host application, `vistest`. Both `libvis` and `vistest` compile and link `vis.cpp` where a handful of routines are defined with various visibility settings.
 
 Each test grabs the function pointer for routines with the same name: one in `libvis` and one in `vistest`. It then compares the pointers for equality. Given that each symbol in the host application is visible for the host, the function pointers will (mis)match depending on the visibility settings of each function in the `libvis`.
 
-To ensure the call into `libvis` is fetching the symbol `libvis` would use, there are "getter" functions that are implemented in `libvis` alone.
+To ensure the call into `libvis` is fetching `libvis`'s variant of the symbol, there are "getter" functions compiled into `libvis` alone.
+
+Build and run the project and you'll see output in accordance with the tests.
 
 ## Example Output
 
@@ -36,7 +38,7 @@ You can run `nm` on both `libvis` and the `vistest` to see what symbols both exp
 ## Example Output
 
 ```shell
-$ nm /path/to/liblibvis.dylib | c++filt
+$ nm -C /path/to/liblibvis.dylib
 0000000000000f80 t vis::hidden_function()
 0000000000000f60 T vis::default_function()
 0000000000000f40 T vis::get_hidden_function()
@@ -48,7 +50,7 @@ $ nm /path/to/liblibvis.dylib | c++filt
 ```
 
 ```shell
-$ nm /path/to/vistest | c++filt
+$ nm -C /path/to/vistest
 0000000100000df0 T compare_routines(char const*, void* (*)(), void* (*)())
 0000000100000f20 t vis::hidden_function()
 0000000100000f00 T vis::default_function()
@@ -80,3 +82,5 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [GCC common variable attributes: `visibility`](https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html#index-visibility-variable-attribute)
     - [GCC command-line option `-fvisibility-ms-compat`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-fvisibility-ms-compat)
     - [GCC wiki: Visibility](https://gcc.gnu.org/wiki/Visibility)
+- nm
+    - [`nm` symbol types and their meanings](https://sourceware.org/binutils/docs/binutils/nm.html)
