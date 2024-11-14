@@ -84,3 +84,7 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [GCC wiki: Visibility](https://gcc.gnu.org/wiki/Visibility)
 - nm
     - [`nm` symbol types and their meanings](https://sourceware.org/binutils/docs/binutils/nm.html)
+- Mach-O
+    - [`LC_SYMTAB` notes](https://github.com/qyang-nj/llios/blob/main/macho_parser/docs/LC_SYMTAB.md)
+    - [weak symbols](https://maskray.me/blog/2021-04-25-weak-symbol)
+    - [nlist_64 where `N_WEAK_DEF` would be defined](https://github.com/aidansteele/osx-abi-macho-file-format-reference?tab=readme-ov-file#nlist_64)
