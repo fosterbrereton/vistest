@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CEE053512CE6A10700D3EF3E /* libvis.hpp in Headers */ = {isa = PBXBuildFile; fileRef = CEE0534B2CE6A10700D3EF3E /* libvis.hpp */; };
 		CEE053522CE6A10700D3EF3E /* libvis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0534E2CE6A10700D3EF3E /* libvis.cpp */; };
-		CEE053542CE6A18F00D3EF3E /* liblibvis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */; };
+		CEE053542CE6A18F00D3EF3E /* libvis.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE053472CE6A0B700D3EF3E /* libvis.dylib */; };
 		CEE053572CE6A56B00D3EF3E /* dylib_getters.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE053552CE6A56B00D3EF3E /* dylib_getters.cpp */; };
 		CEE0535B2CE6AC7800D3EF3E /* libvis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0534E2CE6A10700D3EF3E /* libvis.cpp */; };
 		CEE0535E2CE6B2D900D3EF3E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEE0535C2CE6B2D900D3EF3E /* main.cpp */; };
@@ -29,7 +29,7 @@
 
 /* Begin PBXFileReference section */
 		CEE053392CE6A06B00D3EF3E /* vistest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = vistest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = liblibvis.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE053472CE6A0B700D3EF3E /* libvis.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libvis.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE0534B2CE6A10700D3EF3E /* libvis.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = libvis.hpp; sourceTree = "<group>"; };
 		CEE0534E2CE6A10700D3EF3E /* libvis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libvis.cpp; sourceTree = "<group>"; };
 		CEE053552CE6A56B00D3EF3E /* dylib_getters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dylib_getters.cpp; path = libvis/source/dylib_getters.cpp; sourceTree = SOURCE_ROOT; };
@@ -41,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEE053542CE6A18F00D3EF3E /* liblibvis.dylib in Frameworks */,
+				CEE053542CE6A18F00D3EF3E /* libvis.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,7 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE053392CE6A06B00D3EF3E /* vistest */,
-				CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */,
+				CEE053472CE6A0B700D3EF3E /* libvis.dylib */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,9 +154,9 @@
 			productReference = CEE053392CE6A06B00D3EF3E /* vistest */;
 			productType = "com.apple.product-type.tool";
 		};
-		CEE053462CE6A0B700D3EF3E /* libvis */ = {
+		CEE053462CE6A0B700D3EF3E /* vis */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEE053482CE6A0B700D3EF3E /* Build configuration list for PBXNativeTarget "libvis" */;
+			buildConfigurationList = CEE053482CE6A0B700D3EF3E /* Build configuration list for PBXNativeTarget "vis" */;
 			buildPhases = (
 				CEE053432CE6A0B700D3EF3E /* Headers */,
 				CEE053442CE6A0B700D3EF3E /* Sources */,
@@ -166,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = libvis;
+			name = vis;
 			productName = libvis;
-			productReference = CEE053472CE6A0B700D3EF3E /* liblibvis.dylib */;
+			productReference = CEE053472CE6A0B700D3EF3E /* libvis.dylib */;
 			productType = "com.apple.product-type.library.dynamic";
 		};
 /* End PBXNativeTarget section */
@@ -202,7 +202,7 @@
 			projectRoot = "";
 			targets = (
 				CEE053382CE6A06B00D3EF3E /* vistest */,
-				CEE053462CE6A0B700D3EF3E /* libvis */,
+				CEE053462CE6A0B700D3EF3E /* vis */,
 			);
 		};
 /* End PBXProject section */
@@ -376,6 +376,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				LD_DYLIB_INSTALL_NAME = "@rpath/lib$(TARGET_NAME).dylib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -389,6 +390,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
+				LD_DYLIB_INSTALL_NAME = "@rpath/lib$(TARGET_NAME).dylib";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -415,7 +417,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEE053482CE6A0B700D3EF3E /* Build configuration list for PBXNativeTarget "libvis" */ = {
+		CEE053482CE6A0B700D3EF3E /* Build configuration list for PBXNativeTarget "vis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEE053492CE6A0B700D3EF3E /* Debug */,
