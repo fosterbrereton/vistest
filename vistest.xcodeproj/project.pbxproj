@@ -34,6 +34,7 @@
 		CEE0534E2CE6A10700D3EF3E /* libvis.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = libvis.cpp; sourceTree = "<group>"; };
 		CEE053552CE6A56B00D3EF3E /* dylib_getters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dylib_getters.cpp; path = libvis/source/dylib_getters.cpp; sourceTree = SOURCE_ROOT; };
 		CEE0535C2CE6B2D900D3EF3E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CEE0535F2CE6CA5C00D3EF3E /* vistest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vistest.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		CEE053302CE6A06B00D3EF3E = {
 			isa = PBXGroup;
 			children = (
+				CEE0535F2CE6CA5C00D3EF3E /* vistest.entitlements */,
 				CEE0535D2CE6B2D900D3EF3E /* src */,
 				CEE053502CE6A10700D3EF3E /* libvis */,
 				CEE0533A2CE6A06B00D3EF3E /* Products */,
@@ -351,6 +353,7 @@
 		CEE053412CE6A06B00D3EF3E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = vistest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -361,6 +364,7 @@
 		CEE053422CE6A06B00D3EF3E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = vistest.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
