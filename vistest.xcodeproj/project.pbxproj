@@ -35,6 +35,7 @@
 		CEE053552CE6A56B00D3EF3E /* dylib_getters.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = dylib_getters.cpp; path = libvis/source/dylib_getters.cpp; sourceTree = SOURCE_ROOT; };
 		CEE0535C2CE6B2D900D3EF3E /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		CEE0535F2CE6CA5C00D3EF3E /* vistest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = vistest.entitlements; sourceTree = "<group>"; };
+		CEE053602CE6CBED00D3EF3E /* config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		CEE053302CE6A06B00D3EF3E = {
 			isa = PBXGroup;
 			children = (
+				CEE053602CE6CBED00D3EF3E /* config.xcconfig */,
 				CEE0535F2CE6CA5C00D3EF3E /* vistest.entitlements */,
 				CEE0535D2CE6B2D900D3EF3E /* src */,
 				CEE053502CE6A10700D3EF3E /* libvis */,
@@ -233,6 +235,7 @@
 /* Begin XCBuildConfiguration section */
 		CEE0533E2CE6A06B00D3EF3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE053602CE6CBED00D3EF3E /* config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -296,6 +299,7 @@
 		};
 		CEE0533F2CE6A06B00D3EF3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE053602CE6CBED00D3EF3E /* config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -376,7 +380,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7TFB9PV9X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
@@ -390,7 +393,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T7TFB9PV9X;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				EXECUTABLE_PREFIX = lib;
