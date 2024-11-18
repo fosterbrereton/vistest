@@ -31,11 +31,13 @@ MISMATCH for 'hidden_weak'
     local: 0x100000f30
 ```
 
-# Additional Tests
+# Additional Tools
+
+## `nm`
 
 You can run `nm` on both `libvis` and the `vistest` to see what symbols both export.
 
-## Example Output
+### Example Output
 
 ```shell
 $ nm -C /path/to/liblibvis.dylib
@@ -65,7 +67,30 @@ $ nm -C /path/to/vistest
                  U _printf
 ```
 
+## `dyld_info`
+
+`dyld_info` can be used to determine which symbols are `weak-coalesce`. All instances of an exported symbol marked `weak-coalesce` will be reconciled to a single function pointer.
+
+### Example Output
+
+```shell
+$ dyld_info -fixups vistest | c++filt
+vistest [x86_64]:
+    -fixups:
+        segment      section          address                 type   target
+        __DATA_CONST __got            0x100001000              bind  weak-coalesce/vis::default_weak_function()
+        __DATA_CONST __got            0x100001008              bind  libvis.dylib/vis::get_hidden_weak_function()
+        __DATA_CONST __got            0x100001010              bind  libvis.dylib/vis::get_hidden_function()
+        __DATA_CONST __got            0x100001018              bind  libvis.dylib/vis::get_default_function()
+        __DATA_CONST __got            0x100001020              bind  libvis.dylib/vis::get_default_weak_function()
+        __DATA_CONST __got            0x100001028              bind  libSystem.B.dylib/_printf
+``` 
+
 Both `vistest` and `libvis` use `printf`-formatted output to keep from including C++ symbols and polluting the symbol tables of each artifact.
+
+# `objdump`
+
+LLVM object file dumper. On macOS almost always requires the `--macho` flag in addition to whatever other flags you'd like to pass.
 
 # Links
 
@@ -82,9 +107,17 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [GCC common variable attributes: `visibility`](https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html#index-visibility-variable-attribute)
     - [GCC command-line option `-fvisibility-ms-compat`](https://gcc.gnu.org/onlinedocs/gcc/C_002b_002b-Dialect-Options.html#index-fvisibility-ms-compat)
     - [GCC wiki: Visibility](https://gcc.gnu.org/wiki/Visibility)
-- nm
-    - [`nm` symbol types and their meanings](https://sourceware.org/binutils/docs/binutils/nm.html)
 - Mach-O
     - [`LC_SYMTAB` notes](https://github.com/qyang-nj/llios/blob/main/macho_parser/docs/LC_SYMTAB.md)
     - [weak symbols](https://maskray.me/blog/2021-04-25-weak-symbol)
     - [nlist_64 where `N_WEAK_DEF` would be defined](https://github.com/aidansteele/osx-abi-macho-file-format-reference?tab=readme-ov-file#nlist_64)
+- `nm`
+    - [manpage](https://sourceware.org/binutils/docs/binutils/nm.html)
+- `dyld_info`
+    - [manpage](https://keith.github.io/xcode-man-pages/dyld_info.1.html)
+        - (On macOS 14.7.1 the `-linked_dylibs` option as been renamed `-dependents`)
+    - [Stackoverflow explanation of `weak-coalesce`](https://stackoverflow.com/a/75955135/153535)
+- `dyld`
+    - [manpage, including details on `@executable_path`, `@loader_path`, and `@rpath`](https://www.manpagez.com/man/1/dyld/)
+- `objdump`
+    - [manpage](https://man7.org/linux/man-pages/man1/objdump.1.html)
