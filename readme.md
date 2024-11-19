@@ -119,5 +119,7 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [Stackoverflow explanation of `weak-coalesce`](https://stackoverflow.com/a/75955135/153535)
 - `dyld`
     - [manpage, including details on `@executable_path`, `@loader_path`, and `@rpath`](https://www.manpagez.com/man/1/dyld/)
+    - [`dyld` sources from Apple Opensource](https://github.com/apple-oss-distributions/dyld)
+    - [Apple: Logging Dynamic Loader Events](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/LoggingDynamicLoaderEvents.html)
 - `objdump`
     - [manpage](https://man7.org/linux/man-pages/man1/objdump.1.html)
