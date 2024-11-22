@@ -92,6 +92,8 @@ Both `vistest` and `libvis` use `printf`-formatted output to keep from including
 
 LLVM object file dumper. On macOS almost always requires the `--macho` flag in addition to whatever other flags you'd like to pass.
 
+Use `objdump --macho --demangle --syms /path/to/file.o` to see symbols and their attributes in an object file. Note that `.hidden` in a description means the symbol is private and will not be shared across DLL boundaries. Note that mangled names are required in an exported symbols list
+
 # Links
 
 These are listed in no particular order. NOTE: Clang supports all attributes defined for GCC.
@@ -123,3 +125,6 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [Apple: Logging Dynamic Loader Events](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/LoggingDynamicLoaderEvents.html)
 - `objdump`
     - [manpage](https://man7.org/linux/man-pages/man1/objdump.1.html)
+- Clang's `-exported_symbols_list`
+    - [Minimizing Your Exported Symbols](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/ReducingExports.html)
+    - [Symbol Exporting Strategies](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryDesignGuidelines.html#//apple_ref/doc/uid/TP40002013-SW18)
