@@ -94,6 +94,10 @@ LLVM object file dumper. On macOS almost always requires the `--macho` flag in a
 
 Use `objdump --macho --demangle --syms /path/to/file.o` to see symbols and their attributes in an object file. Note that `.hidden` in a description means the symbol is private and will not be shared across DLL boundaries. Note that mangled names are required in an exported symbols list
 
+# `ld`
+
+`ld` is the macOS linker. Many flags are passed to it (often indirectly by way of Clang) to link the final executable (and any dependents that need to be linked along the way.) Of special note to this topic are flags like `exported_symbols_list` that affect the visibility of symbols from the linker command line. See the manpage (link below) for details on additional relevant flags.
+
 # Links
 
 These are listed in no particular order. NOTE: Clang supports all attributes defined for GCC.
@@ -125,6 +129,8 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [Apple: Logging Dynamic Loader Events](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/LoggingDynamicLoaderEvents.html)
 - `objdump`
     - [manpage](https://man7.org/linux/man-pages/man1/objdump.1.html)
+- `ld`
+    - [manpage](https://www.unix.com/man-page/osx/1/ld/)
 - Clang's `-exported_symbols_list`
     - [Minimizing Your Exported Symbols](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/ReducingExports.html)
     - [Symbol Exporting Strategies](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryDesignGuidelines.html#//apple_ref/doc/uid/TP40002013-SW18)
