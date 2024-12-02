@@ -131,6 +131,8 @@ These are listed in no particular order. NOTE: Clang supports all attributes def
     - [manpage](https://man7.org/linux/man-pages/man1/objdump.1.html)
 - `ld`
     - [manpage](https://www.unix.com/man-page/osx/1/ld/)
+    - The GNU Linker, [PDF](https://sourceware.org/binutils/docs/ld.pdf) and [HTML](https://sourceware.org/binutils/docs/ld/index.html) variants
+    - [Everything you never wanted to know about linker script](https://mcyoung.xyz/2021/06/01/linker-script/)
 - Clang's `-exported_symbols_list`
     - [Minimizing Your Exported Symbols](https://developer.apple.com/library/archive/documentation/Performance/Conceptual/CodeFootprint/Articles/ReducingExports.html)
     - [Symbol Exporting Strategies](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/DynamicLibraries/100-Articles/DynamicLibraryDesignGuidelines.html#//apple_ref/doc/uid/TP40002013-SW18)
